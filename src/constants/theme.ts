@@ -1,28 +1,26 @@
 /**
  * Tema visual do ExploreCity.
- * Aqui ficam as cores, fontes, espaçamentos, bordas e sombras do app.
- * Todas as telas leem os valores deste arquivo.
  */
 
+// @ts-ignore - Ignora o aviso do TypeScript para a importação do CSS
 import '@/global.css';
 
 import { Platform } from 'react-native';
 
-// Cores do app, em duas versões: modo claro (light) e modo escuro (dark).
 export const Colors = {
   light: {
     text: '#13262B',
-    background: '#FAF7F2', // fundo areia
+    background: '#FAF7F2',
     backgroundElement: '#F1ECE3',
     backgroundSelected: '#E6DFD2',
     textSecondary: '#5F6B6F',
-    primary: '#0F4C5C', // azul-petróleo
-    accent: '#F28C28', // laranja pôr do sol
+    primary: '#0F4C5C',
+    accent: '#F28C28',
     card: '#FFFFFF',
     border: '#E8E1D5',
-    museum: '#7B4FA3', // roxo
-    park: '#2E9E5B', // verde
-    monument: '#D2693A', // terracota
+    museum: '#7B4FA3',
+    park: '#2E9E5B',
+    monument: '#D2693A',
   },
   dark: {
     text: '#F5F1EA',
@@ -44,30 +42,25 @@ export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
+    sans: 'Poppins_500Medium',
     serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
     rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
   },
   default: {
-    sans: 'normal',
+    sans: 'Poppins_500Medium',
     serif: 'serif',
     rounded: 'normal',
     mono: 'monospace',
   },
   web: {
-    sans: 'var(--font-display)',
+    sans: 'Poppins_500Medium',
     serif: 'var(--font-serif)',
     rounded: 'var(--font-rounded)',
     mono: 'var(--font-mono)',
   },
 });
 
-// Espaçamentos padrão (em pixels).
 export const Spacing = {
   half: 2,
   one: 4,
@@ -78,7 +71,6 @@ export const Spacing = {
   six: 64,
 } as const;
 
-// Arredondamento das bordas: cards, botões e fotos.
 export const Radius = {
   small: 10,
   medium: 16,
@@ -86,7 +78,6 @@ export const Radius = {
   pill: 999,
 } as const;
 
-// Sombra discreta para os cards (funciona no Android e no iOS).
 export const Shadow = {
   card: {
     shadowColor: '#000000',

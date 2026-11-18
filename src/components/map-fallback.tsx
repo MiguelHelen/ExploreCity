@@ -1,6 +1,6 @@
 /**
- * Tela alternativa ao mapa, usada quando o mapa do Google não está disponível
- * (development build sem chave de API). Mostra os lugares em lista, por distância.
+ * Tela alternativa ao mapa (Modo Lista).
+ * Mostra os lugares por distância quando o mapa do Google não está disponível.
  */
 
 import { useRouter } from 'expo-router';
@@ -35,13 +35,6 @@ export function MapFallback() {
           <Text style={[styles.title, { color: colors.text }]}>Lugares</Text>
           <Text style={[styles.subtitle, { color: colors.textSecondary }]}>
             Do mais perto para o mais longe.
-          </Text>
-        </View>
-
-        <View style={[styles.notice, { backgroundColor: colors.backgroundElement }]}>
-          <Text style={[styles.noticeText, { color: colors.text }]}>
-            🗺️ O mapa não está disponível nesta versão de teste, porque ela não tem a chave do
-            Google Maps. No Expo Go o mapa funciona normalmente.
           </Text>
         </View>
 
@@ -90,16 +83,6 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 15,
-  },
-  notice: {
-    marginHorizontal: Spacing.four,
-    marginTop: Spacing.three,
-    padding: Spacing.three,
-    borderRadius: Radius.medium,
-  },
-  noticeText: {
-    fontSize: 14,
-    lineHeight: 20,
   },
   list: {
     gap: Spacing.two + 2,
