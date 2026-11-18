@@ -54,6 +54,3 @@ src/
 ## Limitações conhecidas
 - As notificações de proximidade funcionam **com o app aberto**. Com a tela bloqueada, seria necessária localização em segundo plano, que não é suportada no Expo Go.
 - Notificações push (remotas) não são usadas.
-
-## Créditos das fotos
-[Liste aqui a fonte de cada foto, por exemplo: "MASP — Wikimedia Commons, autor, licença".]

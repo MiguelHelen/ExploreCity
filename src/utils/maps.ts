@@ -7,8 +7,11 @@
  *   Então, sem chave, o app mostra uma alternativa em lista.
  */
 
-import Constants, { ExecutionEnvironment } from 'expo-constants';
+import Constants, { AppOwnership, ExecutionEnvironment } from 'expo-constants';
+
+const runningInExpoGo =
+  Constants.executionEnvironment === ExecutionEnvironment.StoreClient ||
+  Constants.appOwnership === AppOwnership.Expo;
 
 export const mapsAvailable: boolean =
-  Constants.executionEnvironment === ExecutionEnvironment.StoreClient ||
-  Boolean(Constants.expoConfig?.android?.config?.googleMaps?.apiKey);
+  runningInExpoGo || Boolean(Constants.expoConfig?.android?.config?.googleMaps?.apiKey);
