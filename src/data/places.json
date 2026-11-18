@@ -1,0 +1,92 @@
+[
+  {
+    "id": "museu-ipiranga",
+    "name": "Museu do Ipiranga",
+    "category": "museum",
+    "description": "Inaugurado em 1895, o edifício foi construído como monumento à Independência do Brasil, no local às margens do riacho do Ipiranga onde, segundo a história oficial, Dom Pedro I proclamou a independência em 1822. Hoje abriga o acervo histórico do Museu Paulista, da USP.",
+    "curiosity": "Aqui fica o famoso quadro 'Independência ou Morte', de Pedro Américo, pintado em 1888. O museu passou quase dez anos fechado para restauro e reabriu em 2022, no bicentenário da Independência.",
+    "latitude": -23.5855,
+    "longitude": -46.6097,
+    "image": "museu-ipiranga.jpg"
+  },
+  {
+    "id": "masp",
+    "name": "MASP",
+    "category": "museum",
+    "description": "O Museu de Arte de São Paulo Assis Chateaubriand foi fundado em 1947 e guarda o mais importante acervo de arte europeia do hemisfério sul. Fica na Avenida Paulista, um dos principais cartões-postais da cidade.",
+    "curiosity": "O prédio, projetado pela arquiteta Lina Bo Bardi e inaugurado em 1968, tem um vão livre de 74 metros: o museu fica suspenso por quatro pilares, e a área embaixo é uma praça pública.",
+    "latitude": -23.5614,
+    "longitude": -46.6559,
+    "image": "masp.jpg"
+  },
+  {
+    "id": "pinacoteca",
+    "name": "Pinacoteca de São Paulo",
+    "category": "museum",
+    "description": "Fundada em 1905, a Pinacoteca é o museu de artes visuais mais antigo da cidade e tem foco na arte brasileira. Fica no bairro da Luz, ao lado do Parque da Luz.",
+    "curiosity": "O prédio de tijolos aparentes foi projetado por Ramos de Azevedo e construído no fim do século XIX para abrigar o Liceu de Artes e Ofícios, uma escola que formava profissionais para a cidade em crescimento.",
+    "latitude": -23.5343,
+    "longitude": -46.6338,
+    "image": "pinacoteca.jpg"
+  },
+  {
+    "id": "parque-ibirapuera",
+    "name": "Parque Ibirapuera",
+    "category": "park",
+    "description": "Inaugurado em 1954, durante as comemorações dos 400 anos de São Paulo, é o parque mais famoso da cidade. Reúne áreas verdes, lago, ciclovias, museus e espaços culturais.",
+    "curiosity": "Os principais prédios do parque, como a Marquise, foram desenhados por Oscar Niemeyer. Até hoje o Ibirapuera é um dos parques urbanos mais visitados da América Latina.",
+    "latitude": -23.5874,
+    "longitude": -46.6576,
+    "image": "parque-ibirapuera.jpg"
+  },
+  {
+    "id": "parque-da-luz",
+    "name": "Parque da Luz",
+    "category": "park",
+    "description": "Criado em 1825, o Jardim da Luz foi o primeiro jardim público de São Paulo. Fica no centro da cidade e é cercado por construções históricas, como a Pinacoteca e a Estação da Luz.",
+    "curiosity": "O parque tem esculturas espalhadas entre as árvores e lagos antigos. É um raro refúgio verde dentro do centro histórico, e já foi ponto de passeio da sociedade paulistana no século XIX.",
+    "latitude": -23.5347,
+    "longitude": -46.6351,
+    "image": "parque-da-luz.jpg"
+  },
+  {
+    "id": "parque-villa-lobos",
+    "name": "Parque Villa-Lobos",
+    "category": "park",
+    "description": "Inaugurado em 1994, o parque fica na Zona Oeste e recebe o nome do maestro e compositor brasileiro Heitor Villa-Lobos. Tem gramados amplos, pistas de corrida e ciclovias.",
+    "curiosity": "Como tem muito espaço aberto e pouca sombra pesada, é um dos lugares preferidos dos paulistanos para soltar pipa, andar de bicicleta e fazer piqueniques aos fins de semana.",
+    "latitude": -23.5469,
+    "longitude": -46.7237,
+    "image": "parque-villa-lobos.jpg"
+  },
+  {
+    "id": "theatro-municipal",
+    "name": "Theatro Municipal",
+    "category": "monument",
+    "description": "Inaugurado em 1911, o Theatro Municipal é um dos edifícios mais bonitos e importantes do centro histórico de São Paulo. Sua arquitetura de inspiração europeia reflete a época de riqueza do café na cidade.",
+    "curiosity": "Em fevereiro de 1922, este teatro foi palco da Semana de Arte Moderna, evento que mudou a cultura brasileira e marcou o início do Modernismo no país.",
+    "latitude": -23.5452,
+    "longitude": -46.6387,
+    "image": "theatro-municipal.jpg"
+  },
+  {
+    "id": "catedral-da-se",
+    "name": "Catedral da Sé",
+    "category": "monument",
+    "description": "A Catedral Metropolitana de São Paulo é uma das maiores igrejas neogóticas do mundo. As obras começaram em 1913 e o templo foi inaugurado em 1954, nas comemorações do quarto centenário da cidade.",
+    "curiosity": "A Praça da Sé, em frente à catedral, abriga o marco zero de São Paulo: é a partir dele que se medem as distâncias das estradas e a numeração das ruas da cidade.",
+    "latitude": -23.5505,
+    "longitude": -46.6339,
+    "image": "catedral-da-se.jpg"
+  },
+  {
+    "id": "monumento-as-bandeiras",
+    "name": "Monumento às Bandeiras",
+    "category": "monument",
+    "description": "Obra do escultor Victor Brecheret, inaugurada em 1953, o monumento fica na entrada do Parque Ibirapuera e homenageia os bandeirantes, exploradores que avançaram pelo interior do Brasil nos séculos XVI e XVII.",
+    "curiosity": "A escultura gigante foi feita com blocos de granito e retrata cerca de 40 figuras em movimento, puxando uma canoa. Ela é uma das obras públicas mais conhecidas da cidade, e também uma das mais debatidas, por causa da forma como a história dos bandeirantes é contada.",
+    "latitude": -23.5742,
+    "longitude": -46.6596,
+    "image": "monumento-as-bandeiras.jpg"
+  }
+]

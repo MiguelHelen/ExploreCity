@@ -1,18 +1,31 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
+/**
+ * Layout geral do ExploreCity.
+ * Usa uma pilha (Stack): o grupo "(tabs)" é a base do app (Home, Mapa e Guia),
+ * e telas como a de detalhes abrem por cima dele.
+ * Os provedores envolvem tudo, para todas as telas terem acesso ao GPS
+ * e às notificações de proximidade.
+ */
+
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useColorScheme } from 'react-native';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+import { LocationProvider } from '@/services/location-context';
+import { ProximityProvider } from '@/services/proximity-context';
 
 SplashScreen.preventAutoHideAsync();
 
-export default function TabLayout() {
+export default function RootLayout() {
   const colorScheme = useColorScheme();
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
+      <LocationProvider>
+        <ProximityProvider>
+          <AnimatedSplashOverlay />
+          <Stack screenOptions={{ headerShown: false }} />
+        </ProximityProvider>
+      </LocationProvider>
     </ThemeProvider>
   );
-}
+} 

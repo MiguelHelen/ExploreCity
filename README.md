@@ -1,56 +1,59 @@
-# Welcome to your Expo app 👋
+# ExploreCity 🧭
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Guia turístico e histórico interativo de São Paulo, feito com React Native e Expo.
 
-## Get started
+**Disciplina:** Programação Web 2 — Projeto 3: Guia Turístico e Histórico Interativo
+**Integrantes:** [Mariana], [Miguel], [Pedro], [Wallex]
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+## Funcionalidades
 
-2. Start the app
+| Requisito | Como foi feito |
+|---|---|
+| Mapa e marcadores | `react-native-maps`, com marcadores coloridos para Museus (roxo), Parques (verde) e Monumentos (terracota), filtro por categoria e mapa centralizado no usuário e no ponto selecionado |
+| GPS | `expo-location`: posição atual, distância (fórmula de Haversine) e pontos mais próximos |
+| Notificações | `expo-notifications`: alerta local com uma curiosidade histórica ao chegar perto de um ponto, raio configurável (100 m a 1 km), sem repetir o mesmo aviso (intervalo de 6 h, salvo no aparelho) |
+| Acelerômetro | `expo-sensors`: "Agite para um ponto aleatório", usando o sensor real, com vibração, animação e barra de força do movimento |
+| Widget Android | `react-native-android-widget`: [status — atualizar depois] |
+| Dados | Arquivo estático `src/data/places.json` |
 
-   ```bash
-   npx expo start
-   ```
+## Telas
+- **Home:** saudação, atalho "Agite", categorias e pontos próximos
+- **Mapa:** marcadores por categoria, filtros, ponto mais próximo e card de informações
+- **Guia:** visita guiada com progresso, raio de proximidade e teste de notificação
+- **Detalhes:** foto, história, curiosidade e distância
+- **Descoberta:** ponto sorteado ao agitar o celular
 
-In the output, you'll find options to open the app in a
+## Como executar
+Requisitos: Node.js 22 ou superior (testado com Node 24), npm e o app **Expo Go** no celular Android (na versão compatível com o SDK 58). O computador e o celular precisam estar na mesma rede Wi-Fi.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Escaneie o QR Code que aparece no terminal com o Expo Go e permita o acesso à **localização** e às **notificações**.
 
-### Other setup steps
+## Estrutura de pastas
+```
+src/
+├── app/          telas (Expo Router)
+├── components/   cards, marcador, abas
+├── constants/    tema, categorias, configurações de proximidade
+├── data/         places.json e leitura dos dados
+├── services/     GPS, notificações, proximidade e acelerômetro
+├── types/        tipos TypeScript
+└── utils/        cálculo de distância e proximidade
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Como adicionar um novo ponto turístico
+1. Coloque a foto em `assets/images/places/`.
+2. Adicione uma linha em `src/data/placeImages.ts` ligando o nome do arquivo à foto.
+3. Copie um bloco de `src/data/places.json` e troque os dados (id, nome, categoria, descrição, curiosidade, latitude, longitude e imagem).
 
-## Learn more
+## Limitações conhecidas
+- As notificações de proximidade funcionam **com o app aberto**. Com a tela bloqueada, seria necessária localização em segundo plano, que não é suportada no Expo Go.
+- Notificações push (remotas) não são usadas.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Créditos das fotos
+[Liste aqui a fonte de cada foto, por exemplo: "MASP — Wikimedia Commons, autor, licença".]
