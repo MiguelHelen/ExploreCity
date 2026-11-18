@@ -1,21 +1,22 @@
 /**
  * Tela de descoberta aleatória do ExploreCity: "Agite para um ponto aleatório".
  * Usa o acelerômetro (via useShake). Ao detectar uma agitada, sorteia um ponto
- * turístico e mostra foto, nome, curiosidade e um mapa centralizado nele.
+ * turístico e mostra foto, nome, curiosidade e um mapa centralizado nele
+ * (o mapa só aparece quando está disponível neste ambiente).
  */
 
 import { useRouter } from 'expo-router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
-    Animated,
-    Image,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    Vibration,
-    View,
-    useColorScheme,
+  Animated,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  Vibration,
+  View,
+  useColorScheme,
 } from 'react-native';
 import MapView from 'react-native-maps';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -29,6 +30,7 @@ import { useUserLocation } from '@/services/location-context';
 import { SHAKE_THRESHOLD_G, useShake } from '@/services/shake';
 import type { Place } from '@/types/place';
 import { formatDistance } from '@/utils/distance';
+import { mapsAvailable } from '@/utils/maps';
 import { distanceToPlace } from '@/utils/nearby';
 
 // Força máxima exibida na barra (acima disso a barra fica cheia).
@@ -203,24 +205,26 @@ export default function DiscoverScreen() {
               </View>
 
               {/* Mapa pequeno, centralizado automaticamente no lugar sorteado */}
-              <View style={styles.miniMapWrapper}>
-                <MapView
-                  ref={mapRef}
-                  style={StyleSheet.absoluteFill}
-                  initialRegion={{
-                    latitude: place.latitude,
-                    longitude: place.longitude,
-                    latitudeDelta: 0.008,
-                    longitudeDelta: 0.008,
-                  }}
-                  scrollEnabled={false}
-                  zoomEnabled={false}
-                  rotateEnabled={false}
-                  pitchEnabled={false}
-                  toolbarEnabled={false}>
-                  <PlaceMarker place={place} selected onPress={() => {}} />
-                </MapView>
-              </View>
+              {mapsAvailable && (
+                <View style={styles.miniMapWrapper}>
+                  <MapView
+                    ref={mapRef}
+                    style={StyleSheet.absoluteFill}
+                    initialRegion={{
+                      latitude: place.latitude,
+                      longitude: place.longitude,
+                      latitudeDelta: 0.008,
+                      longitudeDelta: 0.008,
+                    }}
+                    scrollEnabled={false}
+                    zoomEnabled={false}
+                    rotateEnabled={false}
+                    pitchEnabled={false}
+                    toolbarEnabled={false}>
+                    <PlaceMarker place={place} selected onPress={() => {}} />
+                  </MapView>
+                </View>
+              )}
 
               <View style={styles.buttonsRow}>
                 <Pressable
